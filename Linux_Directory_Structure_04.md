@@ -1,155 +1,79 @@
-# 🗂 Linux Directory Structure
+# 📁 Linux Directory Structure
 
 ---
 
-## 1. `/` → Root directory
-* This is the top-level directory in Linux. Everything starts from `/`.
-
-**Example 1: List top-level directories**
+## 1. `/` — Root Directory
 
 ```bash
-ubuntu@ip-172-31-6-93:~$ ls /
-bin                dev   lib                lost+found  opt   run                 snap  tmp
-bin.usr-is-merged  etc   lib.usr-is-merged  media       proc  sbin                srv   usr
-boot               home  lib64              mnt         root  sbin.usr-is-merged  sys   var
-````
+/    # This is the top-level directory in Linux. Everything starts from /
+```
 
 👉 Lists all top-level directories like `/bin`, `/etc`, `/home`, `/tmp`, etc.
 
-**Example 2: Change to root directory**
+---
+
+## 2. `/root` → Root User’s Home Directory
 
 ```bash
-ubuntu@ip-172-31-6-93:~$ cd /
-ubuntu@ip-172-31-6-93:/$ pwd
-/
+/root    # This is the personal directory of the root (admin) user.
 ```
 
-👉 Changes current location to the root directory and prints `/`.
+👉 Goes to the root user’s home and lists hidden files like `.bashrc`, `.ssh`, etc.
 
 ---
 
-## 2. `/root` → Root user’s home directory
-
-* This is the personal directory of the root (admin) user.
-
-**Example: List hidden files in root’s home**
+## 3. `/bin` → Basic User Commands
 
 ```bash
-root@ip-172-31-6-93:~# cd /root && ls -a
-.  ..  .bash_history  .bashrc  .profile  .ssh  snap
-```
-
-👉 Goes to the root user’s home and lists hidden files like `.bashrc` and `.ssh`.
-
----
-
-## 3. `/bin` → Basic user commands
-
-* Contains essential user commands like `ls`, `cp`, `cat`, `mv`, `rm`.
-
-**Example: List first 10 commands**
-
-```bash
-root@ip-172-31-6-93:~# ls /bin | head
-NF
-VGAuthService
-[
-aa-enabled
-aa-exec
-aa-features-abi
-acpi_listen
-acpidbg
-add-apt-repository
-addpart
+/bin     # Contains essential user commands like ls, cp, cat, mv, rm.
 ```
 
 👉 Lists first 10 commands available in `/bin`.
 
 ---
 
-## 4. `/sbin` → System administration commands
-
-* Contains system-level commands (normally used by root).
-
-**Example: List first few binaries**
+## 4. `/sbin` → System Administration Commands
 
 ```bash
-root@ip-172-31-6-93:~# ls /sbin | head
-ModemManager
-aa-load
-aa-remove-unknown
-aa-status
-aa-teardown
-accessdb
-acpid
-add-shell
-addgnupghome
-addgroup
+/sbin    # Contains system-level commands (only root normally uses).
 ```
 
 👉 Lists system admin binaries like `shutdown`, `reboot`, `ifconfig`.
 
 ---
 
-## 5. `/opt` → Optional (third-party) software
-
-* Used for installing third-party or extra software.
-
-**Example: List installed third-party applications**
+## 5. `/opt` → Optional (Third-Party) Software
 
 ```bash
-root@ip-172-31-6-93:~# ls /opt
-```
-
-👉 Example: `/opt/google`, `/opt/tomcat`.
-
----
-
-## 6. `/etc` → System configuration files
-
-* Contains all configuration files for services and applications.
-
-**Example 1: Find SSH configuration files**
-
-```bash
-root@ip-172-31-6-93:/opt# ls /etc | grep ssh
-ssh
-```
-
-**Example 2: Display system hostname**
-
-```bash
-root@ip-172-31-6-93:~# cat /etc/hostname
-ip-172-31-6-93
+/opt     # Used for installing third-party or extra software.
 ```
 
 ---
 
-## 7. `/home` → User home directories
-
-* Each user gets a directory here (e.g., `/home/satya`, `/home/dev`).
-
-**Example: List all users’ home directories**
+## 6. `/etc` → System Configuration Files
 
 ```bash
-root@ip-172-31-6-93:~# ls /home
-ubuntu
+/etc     # Contains all configuration files for services and applications.
 ```
 
 ---
 
-## 8. `/tmp` → Temporary files
-
-* Used for temporary storage. Cleared after reboot.
-
-**Example: Create a temporary file**
+## 7. `/home` → User Home Directories
 
 ```bash
-root@ip-172-31-6-93:~# touch /tmp/testfile
-root@ip-172-31-6-93:~# ls -l /tmp/testfile
--rw-r--r-- 1 root root 0 Aug 27 17:46 /tmp/testfile
+/home    # Each user gets a directory here (e.g., /home/satya, /home/dev).
+```
+
+👉 Lists all users’ home directories.
+
+---
+
+## 8. `/tmp` → Temporary Files
+
+```bash
+/tmp     # Used for temporary storage. Cleared after reboot.
 ```
 
 👉 Creates a temporary file in `/tmp`.
 
-```
+---
