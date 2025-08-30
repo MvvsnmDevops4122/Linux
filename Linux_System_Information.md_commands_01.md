@@ -1,320 +1,119 @@
-# Linux System Information Commands
+## 1. System Information Commands
 
 ---
 
-## 1. User Switching & Session
+### User Switching & Session
 
-1. **`sudo su -` (OR) `sudo -i`** → Switch to root user (root’s home: `/root`)  
-
-✅ Example:
 ```bash
-ubuntu@ip-172-31-6-93:~$ sudo su -
-root@ip-172-31-6-93:~# pwd
-/root
+1. sudo su -                # Switch to root user (root's home: /root)
+2. sudo su                  # Switch to root but stay in current user’s home directory
+3. su - username            # Switch to another normal user
+4. exit                     # Exit current shell/session
+5. clear                    # Clear terminal screen
 ````
 
-2. **`sudo su`** → Switch to root but stay in current user’s home directory
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ sudo su
-root@ip-172-31-6-93:/home/ubuntu# pwd
-/home/ubuntu
-```
-
-3. **`su - username`** → Switch to another normal user
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ su - john
-john@ip-172-31-6-93:~$ whoami
-john
-```
-
-4. **`exit`** → Exit current shell/session
-
-✅ Example:
-
-```bash
-root@ip-172-31-6-93:~# exit
-logout
-ubuntu@ip-172-31-6-93:~$
-```
-
-5. **`clear`** → Clear terminal
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ clear
-# (screen is cleared)
-```
+✅ **Use Case**: Switching between application users (e.g., `tomcat`, `jenkins`, `root`) during deployments or troubleshooting.
 
 ---
 
-## 2. Kernel & OS
-
-1. **`uname`** → Show OS details (e.g., Linux)
-
-✅ Example:
+### Kernel & OS Info
 
 ```bash
-ubuntu@ip-172-31-6-93:~$ uname
-Linux
+1. uname                   # Show OS details (e.g., Linux)
+2. uname -r                # Show kernel version
+3. uname -a                # Full system info (kernel, OS, arch, build time)
+4. uname -m                # Architecture (32/64-bit)
 ```
 
-2. **`uname -r`** → Show kernel version
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ uname -r
-6.14.0-1011-aws
-```
-
-3. **`uname -a`** → Full system info (kernel, OS, arch, build time)
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ uname -a
-Linux ip-172-31-6-93 6.14.0-1011-aws #11~24.04.1-Ubuntu SMP Fri Aug  1 02:07:25 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
-```
-
-4. **`uname -m`** → Show architecture (32/64-bit)
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ uname -m
-x86_64
-```
+✅ **Use Case**: Checking kernel version before installing Docker/Kubernetes.
 
 ---
 
-## 3. Hostname & Network
-
-1. **`hostname` / `hostname -i`** → Show system hostname / Show system IP
-
-✅ Example:
+### Hostname & Network
 
 ```bash
-ubuntu@ip-172-31-6-93:~$ hostname
-ip-172-31-6-93
+1. hostname                            # Show hostname
+2. hostname -i                         # Show system IP
+3. hostnamectl set-hostname <name>    # Change hostname
 ```
 
-2. **`hostnamectl set-hostname <name>`** → Change hostname
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ sudo hostnamectl set-hostname satya
-ubuntu@satya:~$
-```
+✅ **Use Case**: Updating hostname to meaningful names like `jenkins-server`, `prod-db`.
 
 ---
 
-## 4. System Uptime
-
-1. **`uptime`** → Display system running time along with number of users and load average
-
-✅ Example:
+### Uptime & Boot Time
 
 ```bash
-ubuntu@ip-172-31-6-93:~$ uptime
-11:11:07 up 45 min,  4 users,  load average: 0.00, 0.00, 0.00
+1. uptime                  # Display system running time, users, load average
+2. uptime -p               # Display running time only (e.g., up 2 hours)
+3. uptime -s               # Show exact boot time
 ```
 
-2. **`uptime -p`** → Display system running time only
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ uptime -p
-up 47 minutes
-```
-
-3. **`uptime -s`** → Show exact system boot time
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ uptime -s
-2025-08-26 15:55:10
-```
+✅ **Use Case**: Checking server uptime after patching or unexpected reboot.
 
 ---
 
-## 5. History
-
-1. **`history`** → Show executed commands
-
-✅ Example:
+### History
 
 ```bash
-ubuntu@ip-172-31-6-93:~$ history
-    1  sudo -i
-    2  useradd satya
-    3  useradd Ram
-    4  useradd sai
-    5  getent passwd
-    6  clear
+1. history                 # Show executed commands
+2. history -c              # Clear all history
+3. history -d 500          # Delete entry #500
+4. !35                     # Run command #35 from history
 ```
 
-2. **`history -c`** → Clear all history
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ history
-    1  history
-```
-
-3. **`history -d 500`** → Delete entry 500 from history
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ history -d 3
-```
-
-4. **`!2`** → Run command #2 from history
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ !2
-pwd
-/home/ubuntu
-```
+✅ **Use Case**: Re-running long commands quickly during builds or troubleshooting.
+⚠️ **Caution**: Avoid `history -c` on shared servers (audit trail loss).
 
 ---
 
-## 6. Manual & Help
-
-1. **`man <cmd>`** → Show manual page
-
-✅ Example:
+### Manual & Help
 
 ```bash
-ubuntu@ip-172-31-6-93:~$ man pwd
+1. man <cmd>               # Manual page for command
+2. whatis ls               # One-line description of the command
 ```
 
-2. **`man -f grep`** → One-line description (same as `whatis`)
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ man -f grep
-grep (1) - print lines that match patterns
-```
-
-3. **`whatis ls`** → Short description of ls
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ whatis ls
-ls (1) - list directory contents
-```
+✅ **Use Case**: Quick help for unfamiliar commands.
 
 ---
 
-## 7. Date & Time
-
-1. **`date`** → Show system date/time
-
-✅ Example:
+### Date & Time
 
 ```bash
-Wed Aug 27 12:15:36 IST 2025
+1. date                                      # Show system date/time
+2. sudo date -s "2025-08-30 09:00:00"        # Set date/time
+3. timedatectl                               # Show timezone & clock info
+4. timedatectl set-timezone Asia/Kolkata     # Set timezone
 ```
 
-2. **`timedatectl`** → Show time zone & clock info
-
-✅ Example:
-
-```bash
-ubuntu@ip-172-31-6-93:~$ timedatectl
-               Local time: Wed 2025-08-27 12:19:28 IST
-           Universal time: Wed 2025-08-27 06:49:28 UTC
-                 RTC time: Wed 2025-08-27 06:49:27
-                Time zone: Asia/Kolkata (IST, +0530)
-System clock synchronized: yes
-              NTP service: active
-          RTC in local TZ: no
-```
-
-3. **`timedatectl set-timezone Asia/Kolkata`** → Set timezone
-
-**Date Format Examples:**
-
-```bash
-date +%d       # Display date only
-date +%m       # Display month only
-date +%y       # Display year only
-date +%H:%M:%S # Display Hours:Minutes:Seconds
-date +%D       # MM/DD/YY
-date +%F       # YYYY-MM-DD
-date +%A       # Display day name
-date +%B       # Display month name
-```
+✅ **Use Case**: Fixing incorrect timezone on Jenkins build servers.
 
 ---
 
-## 8. Calendar
-
-1. **`cal`** → Show current month’s calendar
-
-✅ Example:
+### Date Format Examples
 
 ```bash
-ubuntu@ip-172-31-6-93:~$ cal
+1. date +"%d"            # Display date only
+2. date +"%m"            # Display month only
+3. date +"%y"            # Display year only
+4. date +%D              # MM/DD/YY
+5. date +"%F"            # YYYY-MM-DD
+6. date +"%A"            # Weekday name
+7. date +"%B"            # Month name
+8. date +%H:%M:%S        # Display Hours:Minutes:Seconds
 ```
 
-2. **`cal 2025`** → Show year calendar
+✅ **Use Case**: Creating daily log files, e.g., `backup_$(date +"%F").log`
 
-✅ Example:
+---
+
+### Calendar
 
 ```bash
-ubuntu@ip-172-31-6-93:~$ cal 2025
-                            2025
-      January               February               March
-Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-          1  2  3  4                     1                     1
- 5  6  7  8  9 10 11   2  3  4  5  6  7  8   2  3  4  5  6  7  8
-12 13 14 15 16 17 18   9 10 11 12 13 14 15   9 10 11 12 13 14 15
-19 20 21 22 23 24 25  16 17 18 19 20 21 22  16 17 18 19 20 21 22
-26 27 28 29 30 31     23 24 25 26 27 28     23 24 25 26 27 28 29
-                                            30 31
-
-       April                  May                   June
-Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-       1  2  3  4  5               1  2  3   1  2  3  4  5  6  7
- 6  7  8  9 10 11 12   4  5  6  7  8  9 10   8  9 10 11 12 13 14
-13 14 15 16 17 18 19  11 12 13 14 15 16 17  15 16 17 18 19 20 21
-20 21 22 23 24 25 26  18 19 20 21 22 23 24  22 23 24 25 26 27 28
-27 28 29 30           25 26 27 28 29 30 31  29 30
-
-
-        July                 August              September
-Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-       1  2  3  4  5                  1  2      1  2  3  4  5  6
- 6  7  8  9 10 11 12   3  4  5  6  7  8  9   7  8  9 10 11 12 13
-13 14 15 16 17 18 19  10 11 12 13 14 15 16  14 15 16 17 18 19 20
-20 21 22 23 24 25 26  17 18 19 20 21 22 23  21 22 23 24 25 26 27
-27 28 29 30 31        24 25 26 27 28 29 30  28 29 30
-                      31
-
-      October               November              December
-Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-          1  2  3  4                     1      1  2  3  4  5  6
- 5  6  7  8  9 10 11   2  3  4  5  6  7  8   7  8  9 10 11 12 13
-12 13 14 15 16 17 18   9 10 11 12 13 14 15  14 15 16 17 18 19 20
-19 20 21 22 23 24 25  16 17 18 19 20 21 22  21 22 23 24 25 26 27
-26 27 28 29 30 31     23 24 25 26 27 28 29  28 29 30 31
-                      30
+cal                    # Display current month calendar
 ```
 
+✅ **Use Case**: Checking calendar while scheduling cron jobs.
+
+---
