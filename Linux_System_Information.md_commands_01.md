@@ -69,6 +69,8 @@
 
 ### Manual & Help
 
+The man command is used to view the manual pages for Linux commands and programs.
+
 ```bash
 1. man <cmd>               # Manual page for command
 2. whatis ls               # One-line description of the command
