@@ -60,6 +60,7 @@
 2. history -c              # Clear all history
 3. history -d 500          # Delete entry #500
 4. !35                     # Run command #35 from history
+5. !!                      # Re-run the last executed command
 ```
 
 ✅ **Use Case**: Re-running long commands quickly during builds or troubleshooting.
