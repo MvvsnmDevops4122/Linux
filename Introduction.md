@@ -71,11 +71,13 @@ An operating system is the core software that:
 
 ---
 
-## 1. `/` — Root Directory
+<img width="824" height="512" alt="image" src="https://github.com/user-attachments/assets/eedd343d-5359-4a9e-9926-921685ffce49" />
 
-```bash
-/    # This is the top-level directory in Linux. Everything starts from /
-````
+----
+
+## 1. `/` — Root Directory : 
+
+This is the top-level directory in Linux. Everything starts from /
 
 👉 Lists all top-level directories like `/bin`, `/etc`, `/home`, `/tmp`, etc.
 
@@ -83,65 +85,74 @@ An operating system is the core software that:
 
 ## 2. `/root` → Root User’s Home Directory
 
-```bash
-/root    # This is the personal directory of the root (admin) user.
-```
+This is the personal directory of the root (admin) user.
 
 👉 Goes to the root user’s home and lists hidden files like `.bashrc`, `.ssh`, etc.
 
 ---
 
-## 3. `/bin` → Basic User Commands
+## 3. `/bin` → Basic Commands for All Users
 
-```bash
-/bin     # Contains essential user commands like ls, cp, cat, mv, rm.
-```
+This folder contains the essential command information stored in the /bin directory.
+
+It contains the core executable files (binaries) for basic Linux commands like:
+
+Contains essential user commands like ls, cp, cat, mv, rm.
 
 👉 Lists first 10 commands available in `/bin`.
 
 ---
 
-## 4. `/sbin` → System Administration Commands
+## 4. /boot – Booting Files
 
-```bash
-/sbin    # Contains system-level commands (only root normally uses).
-```
+Contains the bootloader and kernel files required to start the Linux system.
+
+## 5. `/etc` → System Configuration Files
+
+Contains all configuration files for services and applications.
+
+---
+
+## 6. `/sbin` → System Administration Commands
+
+Like /bin, but contains system-level commands reserved for the root user or users with sudo privileges.
 
 👉 Lists system admin binaries like `shutdown`, `reboot`, `ifconfig`.
 
 ---
 
-## 5. `/opt` → Optional (Third-Party) Software
+## 7. /lib – Shared Libraries
 
-```bash
-/opt     # Used for installing third-party or extra software.
-```
+Contains shared library files that help programs in /bin and /sbin run.
+
+Comparable to .dll files in Windows.
+
+Essential for:
+
+System commands
+
+Boot processes
+
+Core programs
 
 ---
 
-## 6. `/etc` → System Configuration Files
+## 8. `/opt` → Optional (Third-Party) Software
 
-```bash
-/etc     # Contains all configuration files for services and applications.
-```
+Used for installing third-party or extra software.
 
 ---
+## 9. `/home` → User Home Directories
 
-## 7. `/home` → User Home Directories
-
-```bash
-/home    # Each user gets a directory here (e.g., /home/satya, /home/dev).
-```
+Each user gets a directory here (e.g., /home/satya, /home/dev).
 
 👉 Lists all users’ home directories.
 
 ---
 
-## 8. `/tmp` → Temporary Files
+## 10. `/tmp` → Temporary Files
 
-```bash
-/tmp     # Used for temporary storage. Cleared after reboot.
-```
+The /tmp directory is used to store temporary files created by the system or users.
 
 👉 Creates a temporary file in `/tmp`.
 
