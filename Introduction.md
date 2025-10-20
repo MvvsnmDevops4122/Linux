@@ -41,6 +41,7 @@ An operating system is the core software that:
 - **File System** – Organizes data into files and directories (everything is treated as a file).  
 - **Applications** – Software like browsers, text editors, and tools that run on top of Linux.
 
+<img width="686" height="371" alt="image" src="https://github.com/user-attachments/assets/b8cdc67c-d570-4e98-9fb7-44be6c5fa604" />
 
 ---
 
@@ -61,6 +62,8 @@ An operating system is the core software that:
 - **PuTTY** – A lightweight SSH client for Windows, widely used for remote access.  
 - **MobaXterm** – An advanced terminal for Windows with SSH, X11 forwarding, and many networking tools.  
 - **macOS Terminal** – Built-in terminal on Macs, supports SSH natively.
+
+<img width="628" height="202" alt="image" src="https://github.com/user-attachments/assets/7297f021-efdd-4c95-b0ca-64c93eb687c6" />
 
 ---
 
