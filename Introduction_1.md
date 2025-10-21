@@ -2,19 +2,17 @@
 
 Linux is an **open-source operating system (OS)**, similar in purpose to Windows or macOS.
 
-An operating system is the core software that:
+Linux is secure and fast.
 
-1. Manages all hardware resources like CPU, memory, disk, and devices.  
-2. Provides a foundation for applications to run.  
-3. Is **case-sensitive** — for example, `kkfunda.txt` and `KKFUNDA.txt` are treated as two different files.  
-4. Was created in **1991 by Linus Torvalds**.
+Provides a foundation for applications to run.  
 
----
+Is **case-sensitive** — for example, `kkfunda.txt` and `KKFUNDA.txt` are treated as two different files.  
 
-## ✨ Key Features of Linux
+It Was created in **1991 by Linus Torvalds**.
 
-- **Multitasking**: Can run multiple programs at the same time without slowing down or crashing.  
-- **Multi-user**: Supports multiple users accessing the system simultaneously without interfering with each other.
+**Multitasking**: Can run multiple programs at the same time without slowing down or crashing.  
+
+**Multi-user**: Supports multiple users accessing the system simultaneously without interfering with each other.
 
 ---
 
