@@ -1,8 +1,3 @@
-Here’s your **File and Directory Management in Linux** section converted into clean, professional **Markdown (.md)** format 👇
-
----
-
-````markdown
 ## 📂 File and Directory Management in Linux
 
 ---
@@ -145,11 +140,3 @@ diff file1 file2
 | `cat file1 file2 > merge.txt` | Merge two files into a new file          |
 | `cat -n file.txt`             | Show file content with line numbers      |
 | `tac file.txt`                | Show file content in reverse order       |
-
-```
-
----
-
-Would you like me to continue this same `.md` formatting style for the **next Linux section** (like text processing or permissions commands)?
-```
-
