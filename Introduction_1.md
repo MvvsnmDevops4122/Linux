@@ -4,8 +4,6 @@ Linux is an **open-source operating system (OS)**, similar in purpose to Windows
 
 Linux is secure and fast.
 
-Provides a foundation for applications to run.  
-
 Is **case-sensitive** — for example, `kkfunda.txt` and `KKFUNDA.txt` are treated as two different files.  
 
 It Was created in **1991 by Linus Torvalds**.
