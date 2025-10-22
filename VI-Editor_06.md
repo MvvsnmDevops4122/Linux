@@ -26,6 +26,15 @@ Used for **navigation** and **command execution**.
 
 ---
 
+```bash
+vi -R file_name                         # View file in read only mode
+
+:se nu                                  # set line numbers
+
+:se nonu                                # Hide line numbers
+
+```
+
 ### 2️⃣ Insert Mode
 
 Used for **text editing** (press `i` to enter, `Esc` to exit).
