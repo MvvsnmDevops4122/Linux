@@ -167,7 +167,7 @@ head -50 file.txt | tail -15
 ```
 ---
 
- ## 7. tail (View Last N Lines of a File)
+ ## 12. tail (View Last N Lines of a File)
  
 Description: The tail command displays the last few lines of a file.
 
@@ -183,4 +183,76 @@ Multiple Files:
 ```bash
 tail file1.txt file2.txt  # Show last 10 lines of both files
 tail -q file1.txt file2.txt  # Suppress headers while displaying output
+tail -f app.log         # Display live logs 
+```
+---
+## 13. sort (Sort File Content)
+
+Description: The sort command arranges lines of text in a specified order.
+
+Usage:
+```bash
+sort file.txt  # Alphabetical sort
+sort -r file.txt  # Reverse order sort
+sort -k 2 data.txt  # Sort based on second column
+sort -u file.txt  # Remove duplicate lines
+```
+---
+
+## 14. grep (Search for Patterns in Files)
+
+Description: The grep command searches for text patterns in a file.
+
+Usage:
+```bash
+grep "UNIX" abc.txt  # Case-sensitive search
+grep -i "UNIX" abc.txt  # Case-insensitive search
+grep -c "UNIX" abc.txt  # Count occurrences
+grep -l "UNIX" *  # Show files containing 'UNIX'
+grep -w "UNIX" abc.txt  # Match whole words only
+```
+
+Advanced Searching:
+
+```bash
+grep -o "UNIX" abc.txt  # Show only matching content
+grep -n "UNIX" abc.txt  # Show line numbers
+grep -v "UNIX" abc.txt  # Show lines that do NOT match
+```
+
+Context Search:
+
+```bash
+grep -B5 "error" demo.txt  # Show 5 lines *before* match
+grep -A5 "error" demo.txt  # Show 5 lines *after* match
+grep -C5 "error" demo.txt  # Show 5 lines *before & after*
+```
+---
+
+## 15. wc (Word Count)
+
+Description: The wc command counts lines, words, bytes, and characters in a file.
+
+Usage:
+
+```bash
+wc file.txt  # Show line, word, and character count
+wc -l file.txt  # Count number of lines
+wc -w file.txt  # Count number of words
+wc -c file.txt  # Count number of bytes/characters
+```
+---
+
+## 16. id & groups (User & Group Information)
+
+Description: The id command provides detailed user information (UID, GID, groups).
+
+The groups command displays all groups a user belongs to.
+
+Usage:
+
+```bash
+id
+id username
+groups
 ```
