@@ -2,7 +2,7 @@
 
 ---
 
-## 🔹 Listing & Checking Location of Files and Directories
+## 1🔹 Listing & Checking Location of Files and Directories
 
 | Command | Description |
 |----------|-------------|
@@ -18,7 +18,7 @@
 
 ---
 
-## 🔹 Change Directories Commands
+## 2🔹 Change Directories Commands
 
 | Command | Description |
 |----------|-------------|
@@ -30,7 +30,7 @@
 
 ---
 
-## 🔹 Display Directory Structure
+## 3🔹 Display Directory Structure
 
 | Command | Description |
 |----------|-------------|
@@ -38,7 +38,7 @@
 
 ---
 
-## 🔹 Creating Files & Directories Commands
+## 4🔹 Creating Files & Directories Commands
 
 | Command | Description |
 |----------|-------------|
@@ -51,7 +51,7 @@
 
 ---
 
-## 🔹 Removing Files & Directories Commands
+## 5🔹 Removing Files & Directories Commands
 
 | Command | Description |
 |----------|-------------|
@@ -66,7 +66,7 @@
 
 ## 📋 Copy / Move / Rename Files and Directories
 
-### 🔹 Copy Files or Directories (`cp`)
+### 6🔹 Copy Files or Directories (`cp`)
 
 | Command | Description |
 |----------|-------------|
@@ -77,7 +77,7 @@
 
 ---
 
-### 🔹 Move or Rename (`mv`)
+### 7🔹 Move or Rename (`mv`)
 
 | Command | Description |
 |----------|-------------|
@@ -86,7 +86,7 @@
 
 ---
 
-## 🔍 File Comparison
+## 8.🔍 File Comparison
 
 ### 🔹 View Files Page-by-Page (`more`)
 
@@ -129,7 +129,7 @@ diff file1 file2
 
 ---
 
-## 🧾 View / Create / Append / Copy / Merge Files (cat Command)
+## 9.🧾 View / Create / Append / Copy / Merge Files (cat Command)
 
 | Command                       | Description                              |
 | ----------------------------- | ---------------------------------------- |
@@ -143,14 +143,14 @@ diff file1 file2
 
 ---
 
-## Nullifying a file
+## 10. Nullifying a file
 
 ```bash
 > file.txt                         # clearing its content without deleting the file itself.
 ```
 ---
 
-## head (View First N Lines of a File)
+## 11. head (View First N Lines of a File)
 
 Description: The head command displays the first few lines of a file.
 
@@ -159,4 +159,28 @@ Usage:
 head file.txt  # Show first 10 lines
 head -n 3 file.txt  # Show first 3 lines
 head -3 file.txt  # Alternative syntax
+```
+Display Specific Line Range (35-50) from a 100-Line File:
+
+```bash
+head -50 file.txt | tail -15
+```
+---
+
+ ## 7. tail (View Last N Lines of a File)
+ 
+Description: The tail command displays the last few lines of a file.
+
+Usage:
+
+```bash
+tail file.txt  # Show last 10 lines
+tail -n 3 file.txt  # Show last 3 lines
+tail -3 file.txt  # Alternative syntax
+```
+Multiple Files:
+
+```bash
+tail file1.txt file2.txt  # Show last 10 lines of both files
+tail -q file1.txt file2.txt  # Suppress headers while displaying output
 ```
