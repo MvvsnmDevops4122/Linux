@@ -140,3 +140,11 @@ diff file1 file2
 | `cat file1 file2 > merge.txt` | Merge two files into a new file          |
 | `cat -n file.txt`             | Show file content with line numbers      |
 | `tac file.txt`                | Show file content in reverse order       |
+
+---
+
+## Nullifying a file
+
+```bash
+> file.txt                         # clearing its content without deleting the file itself.
+```
