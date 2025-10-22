@@ -148,3 +148,15 @@ diff file1 file2
 ```bash
 > file.txt                         # clearing its content without deleting the file itself.
 ```
+---
+
+## head (View First N Lines of a File)
+
+Description: The head command displays the first few lines of a file.
+
+Usage:
+```bash
+head file.txt  # Show first 10 lines
+head -n 3 file.txt  # Show first 3 lines
+head -3 file.txt  # Alternative syntax
+```
