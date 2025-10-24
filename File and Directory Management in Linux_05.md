@@ -226,6 +226,7 @@ Context Search:
 grep -B5 "error" demo.txt  # Show 5 lines *before* match
 grep -A5 "error" demo.txt  # Show 5 lines *after* match
 grep -C5 "error" demo.txt  # Show 5 lines *before & after*
+grep -iE "error | error1 " # Shows two text in same file.
 ```
 ---
 
