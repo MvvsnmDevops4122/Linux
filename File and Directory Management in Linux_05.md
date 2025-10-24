@@ -277,3 +277,44 @@ sudo yum install nano -y     # Install nano if not available
 Commands
 Ctrl+O → Save
 Ctrl+X → Exit
+
+----
+
+## 19. find Command (Search Files & Directories)
+
+The `find` command in Linux is used to **search for files and directories** based on different conditions like name, type, size, permissions, or modification time.
+
+```bash
+find . -name filename/foldername            -> Search by file or folder name current directory(Case-sensitive)
+
+find . -name filename/foldername            -> Search by file or folder name current directory(Case-insensitive)
+
+find . -type f                              -> Search list of the files in current directory
+
+find . -type d                              -> Search list of the folder in current directory
+
+find . -type f -empty                       -> Find empty files in current directory
+
+find . -type f ! -empty                     -> Find non empty files in current directory
+
+find . -type d -empty                       -> Find empty folders in current directory
+
+find . -type d ! -empty                     -> Find non empty folders in current directory
+
+find ~ -type f -empty                       -> Find empty files in home directory
+
+find /tmp -type f -empty                    ->  Find empty files in /tmp
+
+find . -perm 777                            -> search files or folders based on permission.
+
+find . -mtime 1                             -> Modified exactly 1 day ago
+
+find . -mtime -1                            -> Modified less than 1 day ago
+
+find . -mtime +1                            -> Modified more than 1 day ago
+
+find . -type f -empty -delete               -> Delete All Empty Files
+
+touch -d "2 days ago"  filename             -> Modify file date
+ 
+````
