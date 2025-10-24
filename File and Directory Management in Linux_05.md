@@ -257,3 +257,23 @@ id
 id username
 groups
 ```
+---
+## 17.tr Command (Translate Characters)
+
+```bash
+cat demo.txt | sort | tr [a-z] [A-Z]  # Converts lowercase to uppercase
+
+cat demo.txt | sort | tr [A-Z] [a-z]   # Converts Uppercase to Lowercase
+```
+---
+## 18. nano Editor
+
+A beginner-friendly text editor in Linux.
+
+```bash
+nano demo.txt
+sudo yum install nano -y     # Install nano if not available
+```
+Commands
+Ctrl+O → Save
+Ctrl+X → Exit
