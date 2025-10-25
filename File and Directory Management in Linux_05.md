@@ -318,3 +318,35 @@ find . -type f -empty -delete               -> Delete All Empty Files
 touch -d "2 days ago"  filename             -> Modify file date
  
 ````
+----
+
+## 20.sed Command (Stream Editor): 
+
+sed reads a file line-by-line and allows you to replace, delete, or print specific parts of text without opening the file manually
+
+```bash
+sed 's/unix/linux/' abc.txt                -> Replace first occurence(Every line)
+
+sed 's/unix/linux/2' abc.txt               -> Replace 2nd occurence
+
+sed 's/unit/linux/g' abc.txt               -> Replace all occurence
+
+sed '3 s/unix/linux/' abc.txt              -> Replace on line 3
+
+sed '1,3 s/unix/linux/' abc.txt            -> Replace in line range
+
+sed '5d' filename.txt                      -> Delete line 5
+
+sed '3,6d' filename.txt                    -> Delete lines 3 to 6
+
+sed -n '60,80p' filename                   -> To display lines 60 to 80 of a file using sed
+
+(-n prevents printing all lines.)
+
+ sed -n '2 s/am/was/p' sample.txt          -> To replace word and display line no 2 only
+
+ sed -n '1 s/unix/linux/gp' sample.txt     -> Replace all unix with linux on line and print line same.
+
+```
+---
+
