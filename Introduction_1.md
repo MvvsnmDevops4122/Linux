@@ -1,4 +1,4 @@
-# 🐧 What is Linux?
+#  What is Linux?
 
 Linux is an **open-source operating system (OS)**, similar in purpose to Windows or macOS.
 
@@ -14,7 +14,7 @@ It Was created in **1991 by Linus Torvalds**.
 
 ---
 
-## 🆓 Free vs Open Source
+##  Free vs Open Source
 
 ### Free:
 - Free means you can use the software without cost, but the source code is not available.  
@@ -28,7 +28,7 @@ It Was created in **1991 by Linus Torvalds**.
 
 ---
 
-## 🧱 Basic Linux Architecture
+##  Basic Linux Architecture
 
 - **Hardware** – Physical parts like CPU, RAM, disk, and input/output devices.  
 - **Kernel** – The core of the OS; controls hardware like CPU, memory, and devices.  
