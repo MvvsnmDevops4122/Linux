@@ -1,5 +1,15 @@
 # 📅 Crontab: Scheduling Tasks
 
+## 📌 What is Crontab?
+
+**crontab** stands for **Cron Table**.  
+
+It is used to **schedule commands or scripts** to run automatically at specific times and intervals (minutes, hours, days, weeks, months).
+
+Cron = Background scheduler  
+Crontab = File that contains user-defined scheduled tasks
+
+
 ## 🔧 Syntax :
 
 ```
